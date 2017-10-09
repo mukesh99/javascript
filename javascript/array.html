@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<title> First Class Functions </title>
+<meta charset="utf-8">
+<script>
+	/*var array =[];
+	array.push(4,5,6,7,8,9);
+	document.write(array[4]);
+	*/
+	// array with constroctor
+	
+	/*var car = new Array("nano", "Impala", "Mertin");
+	document.write(car);
+	*/
+	
+	/*var arr = new Array(100);
+	for(var i =0; i<100; i++)
+	{
+	document.write(i+i+"<br/>");
+	}*/
+	//array for loop
+	/*var arr =["one", "two", "three"];
+	for(i=0; i<arr.length; i++)
+	{
+	document.write(arr[i]+"<br/>");
+	}*/
+	//push method
+	/*var arr =["one", "two", "three"];
+	arr.push("kumar");
+	arr.push("singh");
+	document.write(arr+"<br/>");
+	*/
+	//pop method
+	/*var arr =["one", "two", "three"];
+	arr.pop();
+	document.write(arr);
+	*/
+	// sift method
+	/*var arr =["one", "two", "three"];
+	arr.shift("India");
+	document.write(arr);
+	*/
+	// Unsift method
+	
+	/*var arr =["one", "two", "three"];
+	arr.unshift("India");
+	document.write(arr);
+	*/
+	// Reverse array
+	/*var arr =["one", "two", "three"];
+	arr.reverse();
+	document.write(arr);
+	*/
+	// copywithin
+	/*var arr =['alpha', 'bravo', 'charlie', 'delta'].copyWithin(2, 1);
+	document.write(arr);
+	*/
+	//fill method
+	/*var numbers = [1, 2, 3]
+numbers.fill(2);
+document.write(numbers);
+*/
+/*var numbers = [1, 2, 3]
+numbers.fill(2,1);
+document.write(numbers);
+*/
+//sort method
+/*var numbers = [1, 2, 3,5,4,8,6]
+numbers.sort();
+document.write(numbers);
+*/
+// splice add value in array
+/*var myFish = ['india', 'pakistan', 'china', 'rassiya'];
+myFish.splice(3, 0, 'nepal');
+document.write(myFish);
+*/
+// Splice Remove value in array
+/*var myFish = ['india', 'pakistan', 'china', 'rassiya'];
+myFish.splice(1, 0);
+document.write(myFish);
+*/
+//concat --adding both array.
+
+/*var arr1 =["one","two","three"];
+var arr2 =["four","five","six"];
+var arr3 = arr1.concat(arr2);
+document.write(arr3);
+*/
+/*var arr1 =["one","two","three"];
+var arr2 =[1,2,3];
+var arr3 = arr1.concat(arr2);
+document.write(arr3);
+*/
+//include method--its mainly for search indecation this letter is available or not .
+
+/*var a = [1, 2, 3];
+a.includes(5); // true 
+console.log(a.includes(2));
+*/
+//indexoff method
+/*var a = [2, 9, 9,19];
+//console.log(a.indexOf(9));
+if (a.indexOf(19) === 3) {
+  console.log("print me");
+}else
+{
+console.log("not print me");
+}*/
+//join method
+/*var arr=['Wind','Rain','Fire'];
+var parampo = arr.join("__");
+document.write(parampo);
+*/
+// lastindex of it will give the position of the word numbers
+/*var numbers = [2, 5, 9, 2];
+var p = numbers.lastIndexOf(2);
+console.log(p);
+*/
+//slice method
+
+/*var a = ['zero', 'one', 'two', 'three'];
+var sliced = a.slice(0, 1);
+var arr2 = sliced;
+document.write(arr2);
+*/
+// tostring method it will change array to string
+/*var months = ['Jan', 'Feb', 'Mar', 'Apr'];
+months.toString();
+document.write(months);
+*/
+//toLocaleString method:- to changes date to string.
+/*var d = new Date();
+var n = d.toLocaleString();
+document.write(n);
+*/
+// entries method -- return key and value
+/*var a = ['a', 'b', 'c'];
+var iterator = a.entries();
+for(var i=0; i <a.length; i++)
+{
+console.log(iterator.next().value);
+}
+*/
+//Every method :- check in array each and every array element. It happen on numaric value.
+
+
+
+/*var ages = [32, 33, 16, 40];
+
+function checkAdult(age) {
+
+    return age >= 18;
+}
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = ages.every(checkAdult);
+}*/
+
+
+
+//find method 
+var inventory = [
+    {name: 'apples', quantity: 2},
+    {name: 'bananas', quantity: 0},
+    {name: 'cherries', quantity: 5}
+];
+
+function findCherries(fruit) { 
+    return fruit.name === 'bananas';
+}
+
+console.log(inventory.find(findCherries));
+
+/*var words = ["spray", "limit", "elite", "exuberant", "destruction", "present"];
+
+var longWords = words.filter(function(word){
+  return word.length > 6;
+});
+document.write(longWords);
+*/
+/*var filtered = [12, 5, 8, 130, 44];
+
+function isBigEnough(filtered) {
+  return filtered >= 10;
+}
+
+document.write(filtered.filter(isBigEnough));*/
+// find method:- The find() method returns the value of the first element in the array
+/*var filtered = [12, 5, 8, 130, 44];
+
+function isBigEnough(filtered) {
+  return filtered >= 10;
+}
+
+document.write(filtered.find(isBigEnough));
+*/
+//Reduce methos:- The reduce() method reduces the array to a single value.
+//check with w3schools
+
+//map method:- The map() method creates a new array with the results of calling a provided function on every element in the calling array
+
+/*var numbers = [1, 5, 10, 15];
+var roots = numbers.map(function(x) {
+   return x * 2;
+});
+document.write(roots); 
+*/
+/*var waittime = 3000;
+console.log("wait for it");
+
+setTimeout(function(){
+	console.log("done");
+},waittime);
+*/
+</script>
+
+
+
+
+<br/>
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+</body>
+</html>

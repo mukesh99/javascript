@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<title> First Class Functions </title>
+<meta charset="utf-8">
+
+<div id="timediv"></div>
+<input type="button" value="start clock" onClick="startclock()">
+<input type="button" value="stop clock" onClick="stopclock()">
+<script>
+	var intervalid;
+	
+	function startclock()
+	{
+		intervalid = setInterval(getcurrenttime, 1000);
+	}
+	 function stopclock()
+	 {
+		clearInterval(intervalid);
+	 }
+	
+	function getcurrenttime()
+	{
+	document.getElementById("timediv").innerHTML = new Date();
+	}
+	//getcurrenttime();
+</script>
+
+</body>
+</html>

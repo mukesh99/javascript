@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<title> First Class Functions </title>
+<meta charset="utf-8">
+<input type="text" value="10" id="txtbox">
+<input type="button" value="start Timer" onClick="startTimer('txtbox')">
+<input type="button" value="stop Timer" onClick="stoptimer()">
+<script>
+	var intervalid;
+	
+	function startTimer(ctrl)
+	{
+		var control = document.getElementById(ctrl);
+		var second = control.value;
+		second = second -1;
+	
+	
+		if(second == 0)
+		{
+		control.value = "Done";
+		//return;
+		}
+		else
+		{
+		control.value = second;
+		}
+		
+		intervalid = setTimeout(function(){startTimer("txtbox")},1000);
+		
+	}
+	
+		function stoptimer()
+		{
+			clearTimeout(intervalid);
+		}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<title> First Class Functions </title>
+<meta charset="utf-8">
+ <script type="text/javascript">
+function sumof(a,b, later)
+{
+	var addme = a+b;
+	document.write(addme);
+	document.write("<br/>");
+	later(p,q);
+}
+function multiply(a,b)
+{
+var mul = a*b;
+document.write(mul);
+document.write("<br/>");
+}
+
+var sum = sumof(20,10,multiply(5,10));
+
+</script>
+
+</body>
+</html>

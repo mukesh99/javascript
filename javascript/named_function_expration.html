@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<title> Named function:- names function "factorial" only used in factorial scope.</title>
+<meta charset="utf-8">
+ <script type="text/javascript">
+ 
+var fact = function factorial(number)
+{
+	if(number <= 1)
+	{
+		return 1
+	}
+	return number * factorial(number - 1)
+}
+
+var result = fact(5);
+document.write(result);
+</script>
+
+</body>
+</html>

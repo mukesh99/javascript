@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<title> First Class Functions </title>
+<meta charset="utf-8">
+<div id="resultDiv"></div>
+<input type="button" value="start Timer" onClick="eventdetails(event)" onmouseover="eventdetails(event)" onmouseout="eventdetails(event)">
+
+<script>
+	function eventdetails(event){
+		var eventDetails = "Event Name =" +event.type+
+							"<br/> X =" +event.clientX+ 
+							"<br/> y = "+event.clientY+
+							"<br/> Target Type = "+event.target.type+
+							"<br/> Target Tag Name = "+event.target.tagName;
+							
+							document.getElementById("resultDiv").innerHTML = eventDetails;
+	}
+</script>
+
+</body>
+</html>

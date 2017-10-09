@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>local and Global variable</p>
+<div id="demo"></div>
+</br>
+<input type="text" name="a" id="a">
+<input type="button" value="addme"  onclick="addme();">
+<input type="button" value="removeme">
+<script>
+ var funcArray = new Array();
+ var id = 1;
+ function addme()
+ {
+ var add1 = document.getElementById("a").value;
+	funcArray.push(add1);
+	populateData(funcArray);
+ }
+ function populateData(){
+	var html = '';
+	for(i=0; i< funcArray.length; i++){
+		html += "<div>" + funcArray[i] + "<a onclick='removeme(" + funcArray[i] + ")'>X</a></div>"
+	}
+	document.getElementById("demo").innerHTML = html;	
+ }
+ function removeme(val)
+ {
+	var i = funcArray.indexOf(""+val);
+	if(i != -1) {
+		funcArray.splice(i, 1);
+	}
+	populateData(funcArray);
+ }
+ 
+ 
+</script>
+
+</body>
+</html>

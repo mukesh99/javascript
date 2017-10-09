@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>local and Global variable</p>
+
+<script>
+var greeting ="How r u";
+function abc()
+{
+var greeting ="My name is khan";
+document.write("<br/>");
+document.write(greeting);
+
+}
+document.write(greeting); // it going to show error that greeting is undefined. But if I will move on above var greeting. it will show as a global variable.
+abc();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<title> First Class Functions </title>
+<meta charset="utf-8">
+
+<img src="images/2.jpg" id="image" style="height:80px; width:80px;">
+ <input type="button" value="start" onClick="startshow()">
+<input type="button" value="stop" onClick="stopshow()">
+<div id="result"></div>
+<script>
+var intarvaltime;
+function startshow()
+{
+intarvaltime = setInterval(chnageImage, 1000);
+}
+function stopshow()
+{
+	clearInterval(intarvaltime);
+}
+function chnageImage()
+{
+	var imgsrc = document.getElementById("image").getAttribute("src");
+	var currentimg = imgsrc.substring(imgsrc.lastIndexOf("/")+1, imgsrc.lastIndexOf("/")+2);
+	if(currentimg == 8)
+	{
+	currentimg = 0;
+	}
+	var newimg = "images/" +(Number(currentimg) + 1)+ ".jpg"
+	document.getElementById("result").innerHTML = newimg;
+	var set = document.getElementById("image").setAttribute("src", newimg);
+	
+	//alert(newimg);
+}	
+//chnageImage();
+</script>
+
+</body>
+</html>

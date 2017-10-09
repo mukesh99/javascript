@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<title> First Class Functions </title>
+<meta charset="utf-8">
+
+<div id="timediv"></div>
+<script>
+	//setinterval and set timeout
+	
+	setInterval(getcurrenttime, 1000);
+	function getcurrenttime()
+	{
+	document.getElementById("timediv").innerHTML = new Date();
+	}
+	
+</script>
+
+</body>
+</html>

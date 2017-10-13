@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<title> First Class Functions </title>
+<meta charset="utf-8">
+<body>
+
+<form id="myForm" name="form1" action="/action_page.php">
+Name: <input type="text" name="fname" value=""><br/><br/>
+Last: <input type="text" name="lname" value=""><br/><br/>
+Select Country: <select name="Country">
+                     <option value="-1" selected>[choose yours]</option>
+                     <option value="1">USA</option>
+                     <option value="2">UK</option>
+                     <option value="3">INDIA</option>
+                  </select><br/><br/>
+Email:-		<input type="text" name="EMail" value="" onchange="validateEmail()">	<br/><br/>	
+Gender:- <input type="radio" name="gender" value="male">  M <input type="radio" name="gender" value="female">  F<br/><br/>
+<input type="button" value="submit" onclick="validation()">
+</form>
+ <script type="text/javascript">
+function validation()
+{
+	if(document.form1.fname.value == "")
+	{
+	alert("plese enter the fname");
+	document.form1.fname.focus() ;
+	return false;
+	}
+	if(document.form1.lname.value == "")
+	{
+	alert("plese enter the lname");
+	document.form1.lname.focus() ;
+	return false;
+	}
+	if( document.form1.Country.value == "-1" )
+         {
+            alert( "Please provide your country!" );
+            return false;
+         }
+		 if(document.form1.EMail.value == "")
+	{
+	alert("plese enter the Email Address");
+	document.form1.EMail.focus() ;
+	return false;
+	}
+	
+	 var gender = document.getElementsByName('gender');
+        var genValue = false;
+
+        for(var i=0; i<gender.length;i++){
+            if(gender[i].checked == true){
+                genValue = true;    
+            }
+        }
+        if(!genValue){
+            alert("Please Choose the gender");
+            return false;
+        }
+	
+}
+		function validateEmail()
+		  {
+			 var emailID = document.form1.EMail.value;
+			 atpos = emailID.indexOf("@");
+			 dotpos = emailID.lastIndexOf(".");
+			 
+			 if (atpos < 1 || ( dotpos - atpos < 2 )) 
+			 {
+				alert("Please enter correct email ID")
+				document.form1.EMail.focus() ;
+				return false;
+			 }
+			 return( true );
+		  }
+</script>
+
+</body>
+</html>

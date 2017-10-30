@@ -1,0 +1,21 @@
+1) How to trim 2 given string.
+2) How to remove last string
+3) How to add string in last
+4) How to concat 2 string
+5) How to replace the string
+6) how to remove middle name string
+7) How to change string with Uppercase
+8) How to change string with Lowercase
+9) How to reverse the string
+10) How to reverse only middle name string
+11) How to concate 2 string
+12) How to make 1 letter Uppercase
+13) How to make text color change
+14) How to validate form
+15) How to add text Background color
+16) How to change font size
+17) How to create div
+18) How to append div
+19) how to remove div
+20) How to give div background color
+21) How to change background 

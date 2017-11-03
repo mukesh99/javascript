@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<title> Comparing objects, take two </title>
+<meta charset="utf-8">
+
+</head>
+<style>
+body{margin:0px; padding:0px;}
+</style>
+<body>
+<div id="main"></div>
+
+<script>
+var outerdiv = document.createElement("div");
+outerdiv.id ="outer";
+outerdiv.style.width = "100px";
+outerdiv.style.height = "100px";
+outerdiv.style.background = "lightblue";
+outerdiv.style.color = "white";
+outerdiv.style.textAlign = "center";
+outerdiv.style.position = "absolute";
+outerdiv.innerHTML ="Hello";
+
+document.getElementById("main").appendChild(outerdiv);
+
+var header = document.createElement("div");
+header.id = "header";
+header.style.width = "100%";
+header.style.height = "100px";
+header.style.background ="lightblue";
+header.innerHTML = "Header part";
+
+document.getElementById("main").appendChild(header);
+
+var left = document.createElement("div");
+left.id ="left";
+left.style.width = "20%";
+left.style.height = "900px";
+left.style.background = "green";
+left.style.float ="left";
+left.innerHTML ="left section";
+
+document.getElementById("main").appendChild(left);
+
+var right = document.createElement("div");
+right.id = "right";
+right.style.width ="80%";
+right.style.height = "900px";
+right.style.background = "pink";
+right.style.float = "left";
+
+document.getElementById("main").appendChild(right);
+
+var footer = document.createElement("div");
+footer.id ="footer";
+footer.style.width="100%";
+footer.style.height="100px";
+footer.style.background ="blue";
+footer.style.float ="left";
+document.getElementById("main").appendChild(footer);
+</script>
+</body>
+</html>

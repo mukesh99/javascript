@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+<title>Html5 concepts</title>
+<script>
+	var myArray =[1,2,3,4,5,6,7,12,34,44,55,67];
+	// In filter 3 way is available "value", "index", and acll back array
+	
+	/*function even(value, index)
+	{
+	return value%2 !== 0; 
+		
+		/*if(value % 2 == 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}*/
+	//}
+
+	
+	
+	
+	 //var result = myArray.filter(even);
+	 var result = myArray.filter(function(value, index){return value%2 == 0;});
+	 document.write(result);
+</script>
+<body>
+
+<div id="result"></div>
+</body>
+</html>

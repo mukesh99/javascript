@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+<title>Html5 concepts</title>
+
+<script>
+    var cart =[];
+    var Item = function(name, price, count)
+    {
+        this.name = name
+        this.price = price
+        this.count = count
+    };
+     function addItemToCart(name, price, count)
+     {
+         for (var i in cart){
+             if(cart[i].name === name)
+             {
+                 cart[i].count+= count;
+                 return;
+             }
+         }
+         var item = new Item(name, price, count);
+         cart.push(item);
+     }
+     addItemToCart("Apple", 200, 4);
+     addItemToCart("Banana", 100, 2);
+     addItemToCart("Apple", 200, 4);
+     addItemToCart("car", 200, 4);
+     console.log(cart);
+     //Remove one item
+    function removeItemFromCart(name) 
+    {
+        for(var i in cart)
+        {
+            if(cart[i].name == name)
+            {
+                cart[i].count --;
+                if (cart[i].count === 0)
+                {
+                    cart.splice(i, 1);
+                }
+                break;
+            }
+        }
+    } 
+console.log(cart[0].count);
+removeItemFromCart("Apple");
+removeItemFromCart("Apple");
+removeItemFromCart("Apple");
+removeItemFromCart("Apple");
+removeItemFromCart("Apple");
+removeItemFromCart("Apple");
+removeItemFromCart("Apple");
+removeItemFromCart("Apple");
+console.log(cart[0].count);
+
+
+    function removeItemFromCartAll(name)
+    {
+        for (var i in cart)
+        {
+            if(cart[i].name === name)
+            {
+                cart.splice(i, 1)
+                break;
+            }
+        }
+    }
+    removeItemFromCartAll("car");
+    colsole.log(cart);
+
+    //clearCart()
+    //countCart()  --> return total count
+    //totalCart()  --> return total cost
+    //listCart() --> array of Item
+    //saveCart() -- here we use local storage
+    //loadCart() --
+</script>
+<body>
+    <h1>Shopping Cart</h1>
+</body>
+
+</html>

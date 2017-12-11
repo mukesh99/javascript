@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+<title>Html5 concepts</title>
+
+<script>
+    var cart =[];
+    var Item = function(name, price, count)
+    {
+        this.name = name
+        this.price = price
+        this.count = count
+    };
+     function addItemToCart(name, price, count)
+     {
+         for (var i in cart){
+             if(cart[i].name === name)
+             {
+                 cart[i].count+= count;
+                 return;
+             }
+         }
+         var item = new Item(name, price, count);
+         cart.push(item);
+     }
+     addItemToCart("Apple", 200.12, 4);
+     addItemToCart("Banana", 100, 2);
+     addItemToCart("Apple", 200.23, 4);
+     addItemToCart("car", 200.40, 4);
+     //console.log(cart);
+     //Remove one item
+    function removeItemFromCart(name) 
+    {
+        for(var i in cart)
+        {
+            if(cart[i].name == name)
+            {
+                cart[i].count --;
+                if (cart[i].count === 0)
+                {
+                    cart.splice(i, 1);
+                }
+                break;
+            }
+        }
+    } 
+//console.log(cart[0].count);
+removeItemFromCart("Apple");
+removeItemFromCart("Apple");
+//removeItemFromCart("Apple");
+// removeItemFromCart("Apple");
+// removeItemFromCart("Apple");
+// removeItemFromCart("Apple");
+// removeItemFromCart("Apple");
+// removeItemFromCart("Apple");
+//console.log(cart[0].count);
+
+
+    function removeItemFromCartAll(name)
+    {
+        for (var i in cart)
+        {
+            if(cart[i].name === name)
+            {
+                cart.splice(i, 1)
+                break;
+            }
+        }
+    }
+    removeItemFromCartAll("car");
+    //console.log(cart);
+
+    function clearCart()
+    {
+        cart = [];
+    }
+    //clearCart();
+    //console.log(cart);
+
+    function countCart()
+    {
+        var totalcount = 0;
+        for (var i in cart)
+        {
+            totalcount += cart[i].count;
+        }
+        return totalcount;
+    }
+
+    console.log(countCart());
+      //--> return total count
+    function totalCost()
+    {
+      var totalCost = 0
+      for (var i in cart)
+      {
+         totalCost += cart[i].price; 
+      }  
+      return totalCost;
+    }  
+    console.log(totalCost());
+    //--> return total cost
+    //--> array of Item
+    function listCart()
+    {
+        var cartCopy = [];
+        for (var i in cart)
+        {
+            var item = cart[i];
+            var itemCopy = {};
+
+            for (var p in item)
+            {
+                itemCopy[p] = item[p];
+            }
+            cartCopy.push(itemCopy);
+        }
+        return cartCopy;
+    } 
+    //console.log(listCart());
+    // ***********************
+    var array = listCart();
+    array[0].name = "Mistake";
+    console.log(array);
+    //saveCart() -- here we use local storage
+    //loadCart() --
+</script>
+<body>
+    <h1>Shopping Cart</h1>
+</body>
+
+</html>

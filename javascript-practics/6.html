@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+<title>Html5 concepts</title>
+
+<script>
+    var cart =[];
+    var Item = function(name, price, count)
+    {
+        this.name = name
+        this.price = price
+        this.count = count
+    };
+    var a = new Item("Brush", 200, 40);
+    //console.log(a);
+
+    cart.push(new Item("Apple", 2.1,2));
+    console.log(cart);
+    console.log(cart[0].name);
+</script>
+<body>
+</body>
+
+</html>

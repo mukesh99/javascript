@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+<title>Html5 concepts</title>
+<script>
+
+	function arrayf()
+	{
+
+	var res = document.getElementById("result");
+	var fname = document.getElementById("fname").value;
+	var lname = document.getElementById("lname").value;
+	
+			var index = 0;
+			var tasks = [];
+			var message = '';
+			if(fname && lname){
+			
+			tasks.push(fname, lname);
+			
+			
+			    message = '<h2>Persons Entered</h2><ol><li>';
+
+        for (var i = 0, count = tasks.length; i < count; i++) {
+            message += tasks[i];
+            message += " ";
+        }
+        message += '</li></ol>';
+        res.innerHTML = message;
+			}
+			return false;
+			console.log(storearray);
+			
+		index++;	
+			
+	}
+</script>
+<body>
+Name:- <input type="text" name="firstname" value="" id="fname">
+LastName:- <input type="text" name="lastname" value="" id="lname">
+
+<input type="Submit" name="submit" value="Submit" onclick="arrayf();">
+
+<br/>
+<div id="result"></div>
+</body>
+</html>

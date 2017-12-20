@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<head>
+<title>Html5 concepts</title>
+
+<script src="jquery.min.js"></script>
+
+<script>
+
+ $( document ).ready(function() {
+ $(".buy_now_button").click(function(event){
+ 	event.preventDefault();
+ 	var name = $(this).attr("data-name"); //this - link na ktery jsem klikl - atribut jmeno
+ 	var price = Number($(this).attr("data-price")); //cena
+ 	addItemToCart(name, price, 1);
+ 	displayCart();
+ 	});
+	
+	
+ 	function displayCart() {
+	console.log('******----***');
+ 	var cartArray = listCart();
+ 	var output = "";
+ 	for(var i in cartArray){
+ 	output += "<li>"+cartArray[i].name+" "+cartArray[i].count+"</li>"
+ 	}
+ 	$("#show-cart").html(output);
+ 	}
+	
+
+
+    var cart =[];
+    var Item = function(name, price, count)
+    {
+        this.name = name
+        this.price = price
+        this.count = count
+    };
+     function addItemToCart(name, price, count)
+     {
+         for (var i in cart){
+             if(cart[i].name === name)
+             {
+                 cart[i].count+= count;
+                 return;
+             }
+         }
+         var item = new Item(name, price, count);
+         cart.push(item);
+         saveCart();
+     }
+    
+    function removeItemFromCart(name) 
+    {
+        for(var i in cart)
+        {
+            if(cart[i].name == name)
+            {
+                cart[i].count --;
+                if (cart[i].count === 0)
+                {
+                    cart.splice(i, 1);
+                }
+                break;
+            }
+        }
+        saveCart();
+    } 
+
+
+
+    function removeItemFromCartAll(name)
+    {
+        for (var i in cart)
+        {
+            if(cart[i].name === name)
+            {
+                cart.splice(i, 1)
+                break;
+            }
+        }
+        saveCart();
+    }
+   
+   
+
+    function clearCart()
+    {
+        cart = [];
+        saveCart();
+    }
+	
+	
+    function countCart()
+    {
+        var totalcount = 0;
+        for (var i in cart)
+        {
+            totalcount += cart[i].count;
+        }
+        return totalcount;
+    }
+
+    console.log(countCart());
+      //--> return total count
+    function totalCost()
+    {
+      var totalCost = 0
+      for (var i in cart)
+      {
+         totalCost += cart[i].price; 
+      }  
+      return totalCost;
+    }  
+    console.log(totalCost());
+    //--> return total cost
+    //--> array of Item
+    function listCart()
+    {
+        var cartCopy = [];
+        for (var i in cart)
+        {
+            var item = cart[i];
+            var itemCopy = {};
+
+            for (var p in item)
+            {
+                itemCopy[p] = item[p];
+            }
+            cartCopy.push(itemCopy);
+        }
+        return cartCopy;
+    } 
+    //console.log(listCart());
+    // ***********************
+  
+    //-- here we use local storage
+    function saveCart() 
+    {
+        localStorage.setItem("shoppingcart", JSON.stringify(cart));
+    }
+    
+    function loadCart()
+    {
+       cart = JSON.parse(localStorage.getItem("shoppingcart"))|| []; 
+	   console.log(cart);
+	   console.log("load cart is coming------- ****");
+    }
+    loadCart();
+	
+	//console.log("cart value:-"+cart);
+    var array = listCart();
+	  //console.log("-------");
+    //console.log(array);
+	 displayCart();
+	//console.log(loadCart());
+	
+	});
+</script>
+<body>
+    <h1>Shopping Cart</h1>
+	<div>
+        <ul>
+            <li><a class="buy_now_button" href="#" data-name="apple" data-price="200">apple 200 1</a></li>
+            <li><a class="buy_now_button" href="#" data-name="Banana" data-price="100">Banana 200 4</a></li>
+            <li><a class="buy_now_button" href="#" data-name="grapse" data-price="130">Grapse 200 6</a></li>
+        </ul>
+        <button id="clear-cart"> Clear Cart</button>
+    </div>
+    <div>
+        <ul id="show-cart">
+
+        </ul>
+    </div>
+</body>
+
+</html>
